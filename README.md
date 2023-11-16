@@ -1,1 +1,1 @@
-# SongCleaner
+# Script to filter out explicit songs in Spotify playlist
