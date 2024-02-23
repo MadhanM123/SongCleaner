@@ -19,7 +19,30 @@ def token(usrname):
     return token
 
 print("Welcome to Spotify Cleaner")
+
 usrname = input("Please enter your Spotify user ID: ")
 tok = token(usrname)
 clean = SpotifyClean(tok)
-playlists = clean.get_playlists()
+plists = clean.get_playlists()
+
+for i, plist in enumerate(plists, 0):
+    print(f"[{i + 1}] {plist.name}")
+
+while True:
+    choice = input("Select a playlist: ")
+
+    if choice.isnumeric():
+        choice = int(choice)
+        choice -= 1
+    else:
+        continue
+
+    if choice < 0 and choice >= len(plist):
+        continue
+    else:
+        plist = plists[choice]
+        break
+
+clean.get_songs(plist)
+cleaned = clean.clean_playlist(plist)
+print(cleaned.url)
