@@ -15,7 +15,7 @@ class Song:
         return False
     
     @property
-    def name(self):
+    def nm(self):
         return self.data["name"]
     
     @property

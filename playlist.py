@@ -6,7 +6,7 @@ class Playlist:
         self.songs = []
 
     @property
-    def name(self):
+    def nm(self):
         return self.data["name"]
     
     @property
@@ -22,5 +22,5 @@ class Playlist:
         return self.data["external_urls"]["spotify"]
     
     @property
-    def is_public(self):
+    def is_pub(self):
         return self.data["public"]
